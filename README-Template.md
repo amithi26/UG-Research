@@ -5,7 +5,7 @@ Exploration of skeletal character animation and Dafny code verification.
 ## Description
 
 Use of Three.js, HTML for in-depth analysis of artifacts in Linear Blend Skinning. Three.js website examples and Mixamo model templates used as basis. 
-Use of Dafny to analyze the use of formal methods of code verification
+Use of Dafny to analyze the use of formal methods of code verification.
 
 ## Getting Started
 
