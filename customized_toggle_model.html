@@ -155,13 +155,14 @@
 			function createPanel() {
 
 				const panel = new GUI( { width: 310 } );
-
+/*
 				const folder1 = panel.addFolder( 'Visibility' );
 				const folder2 = panel.addFolder( 'Activation/Deactivation' );
 				const folder3 = panel.addFolder( 'Pausing/Stepping' );
 				const folder4 = panel.addFolder( 'Crossfading' );
 				const folder5 = panel.addFolder( 'Blend Weights' );
 				const folder6 = panel.addFolder( 'General Speed' );
+    */
 				const folder7 = panel.addFolder( 'Limb Rotation' );
 
 				settings = {
@@ -199,7 +200,7 @@
 					'modify run weight': 0.0,
 					'modify time scale': 1.0
 				};
-
+				/*
 				folder1.add( settings, 'show model' ).onChange( showModel );
 				folder1.add( settings, 'show skeleton' ).onChange( showSkeleton );
 				folder2.add( settings, 'deactivate all' );
@@ -229,31 +230,25 @@
 
 				} );
 				folder6.add( settings, 'modify time scale', 0.0, 1.5, 0.01 ).onChange( modifyTimeScale );
-				
+				*/
 				folder7.add(boneRotation['Right Arm'], 'x', -Math.PI, Math.PI, 0.01).name('Right Arm X').onChange(() => updateArms('mixamorigRightArm'));
-            	folder7.add(boneRotation['Right Arm'], 'y', -Math.PI, Math.PI, 0.01).name('Right Arm Y').onChange(() => updateArms('mixamorigRightArm'));
-            	folder7.add(boneRotation['Right Arm'], 'z', -Math.PI, Math.PI, 0.01).name('Right Arm Z').onChange(() => updateArms('mixamorigRightArm'));
-            	folder7.add(boneRotation['Left Arm'], 'x', -Math.PI, Math.PI, 0.01).name('Left Arm X').onChange(() => updateArms('mixamorigLeftArm'));
-            	folder7.add(boneRotation['Left Arm'], 'y', -Math.PI, Math.PI, 0.01).name('Left Arm Y').onChange(() => updateArms('mixamorigLeftArm'));
+            			folder7.add(boneRotation['Right Arm'], 'y', -Math.PI, Math.PI, 0.01).name('Right Arm Y').onChange(() => updateArms('mixamorigRightArm'));
+            			folder7.add(boneRotation['Right Arm'], 'z', -Math.PI, Math.PI, 0.01).name('Right Arm Z').onChange(() => updateArms('mixamorigRightArm'));
+            			folder7.add(boneRotation['Left Arm'], 'x', -Math.PI, Math.PI, 0.01).name('Left Arm X').onChange(() => updateArms('mixamorigLeftArm'));
+            			folder7.add(boneRotation['Left Arm'], 'y', -Math.PI, Math.PI, 0.01).name('Left Arm Y').onChange(() => updateArms('mixamorigLeftArm'));
 				folder7.add(boneRotation['Left Arm'], 'z', -Math.PI, Math.PI, 0.01).name('Left Arm Z').onChange(() => updateArms('mixamorigLeftArm'));
 				
 				folder7.add(boneRotation['Right Leg'], 'x', -Math.PI, Math.PI, 0.01).name('Right Leg X').onChange(() => updateLegs('mixamorigRightUpLeg'));
-            	folder7.add(boneRotation['Right Leg'], 'y', -Math.PI, Math.PI, 0.01).name('Right Leg Y').onChange(() => updateLegs('mixamorigRightUpLeg'));
-            	folder7.add(boneRotation['Right Leg'], 'z', -Math.PI, Math.PI, 0.01).name('Right Leg Z').onChange(() => updateLegs('mixamorigRightUpLeg'));
-            	folder7.add(boneRotation['Left Leg'], 'x', -Math.PI, Math.PI, 0.01).name('Left Leg X').onChange(() => updateLegs('mixamorigLeftUpLeg'));
-            	folder7.add(boneRotation['Left Leg'], 'y', -Math.PI, Math.PI, 0.01).name('Left Leg Y').onChange(() => updateLegs('mixamorigLeftUpLeg'));
+            			folder7.add(boneRotation['Right Leg'], 'y', -Math.PI, Math.PI, 0.01).name('Right Leg Y').onChange(() => updateLegs('mixamorigRightUpLeg'));
+            			folder7.add(boneRotation['Right Leg'], 'z', -Math.PI, Math.PI, 0.01).name('Right Leg Z').onChange(() => updateLegs('mixamorigRightUpLeg'));
+            			folder7.add(boneRotation['Left Leg'], 'x', -Math.PI, Math.PI, 0.01).name('Left Leg X').onChange(() => updateLegs('mixamorigLeftUpLeg'));
+            			folder7.add(boneRotation['Left Leg'], 'y', -Math.PI, Math.PI, 0.01).name('Left Leg Y').onChange(() => updateLegs('mixamorigLeftUpLeg'));
 				folder7.add(boneRotation['Left Leg'], 'z', -Math.PI, Math.PI, 0.01).name('Left Leg Z').onChange(() => updateLegs('mixamorigLeftUpLeg'));
 
 				folder7.add(boneRotation['Right Knee'], 'x', 0, Math.PI, 0.01).name('Right Knee X').onChange(() => updateKnees('mixamorigRightLeg'));
-            	folder7.add(boneRotation['Left Knee'], 'x', 0, Math.PI, 0.01).name('Left Knee X').onChange(() => updateKnees('mixamorigLeftLeg'));
+            			folder7.add(boneRotation['Left Knee'], 'x', 0, Math.PI, 0.01).name('Left Knee X').onChange(() => updateKnees('mixamorigLeftLeg'));
             	
 
-				folder1.open();
-				folder2.open();
-				folder3.open();
-				folder4.open();
-				folder5.open();
-				folder6.open();
 				folder7.open();
 
 			}
