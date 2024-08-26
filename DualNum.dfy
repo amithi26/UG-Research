@@ -1,3 +1,8 @@
+// action items:
+    // write math class for sqrt _ pow
+    // look into what complex conjugative is (function/method??/var in complex class) & how to use it in lemma 6
+    // look into how to write proofs solving for certain variables in dafny
+
 class Math
 {
     function sqrt()
@@ -5,9 +10,9 @@ class Math
 
     }
 
-    function exp()
+    function pow()
     {
-
+        
     }
 }
 
@@ -37,11 +42,11 @@ class DualNumbers
         requires dual != 0
     {
         // proof here
-        // using equation 17
+        // using equation 17 aka lemma 6
     }
 
     // function: returns the inverse of a dual number
-    function inverse(): real
+    function dnInverse(): real
         requires dual != 0 // pure dual numbers (dual=0) do not have an inverse
         ensures inverse_lemma()
     {
@@ -52,14 +57,19 @@ class DualNumbers
     lemma sqrt_lemma()
         requires dual > 0
     {
-        // proof here
+        var b := sqrt(dual);
+        b_nondual; // ? no given value
+
+        assert pow(b, 2) == dual;
+
+        assert (2 * b * b_nondual) == nondual;
     }
 
-    function sqrt(): real
+    // function: returns the square root of a dual number
+    function dnSqrt(): real
         requires dual > 0
         ensures sqrt_lemma()
     {
-        // sqrt = ^1/2
-        return ;
+        return sqrt(dual) + (dual_unit * (nondual/(2 * sqrt(dual))));
     }
 }
