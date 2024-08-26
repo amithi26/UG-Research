@@ -12,7 +12,7 @@ class Math
 
     function pow()
     {
-        
+
     }
 }
 
@@ -58,10 +58,9 @@ class DualNumbers
         requires dual > 0
     {
         var b := sqrt(dual);
-        b_nondual; // ? no given value
+        b_nondual; // ? no given value ** look into solving for a variable in a proof
 
         assert pow(b, 2) == dual;
-
         assert (2 * b * b_nondual) == nondual;
     }
 
