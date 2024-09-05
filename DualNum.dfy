@@ -42,6 +42,9 @@ class DualNumbers
         requires dual != 0
     {
         // proof here
+        // solving for b_0, b_e -> universal introduction (proof for 1 variable -> for all)
+            // universally quantified assertions
+
         // using equation 17 aka lemma 6
     }
 
@@ -57,11 +60,12 @@ class DualNumbers
     lemma sqrt_lemma()
         requires dual > 0
     {
+        // what is b
         var b := sqrt(dual);
         b_nondual; // ? no given value ** look into solving for a variable in a proof
 
-        assert pow(b, 2) == dual;
-        assert (2 * b * b_nondual) == nondual;
+        assert pow(b, 2) == dual; // redundant..?
+        assert (2 * b * b_nondual) == nondual; // a_e
     }
 
     // function: returns the square root of a dual number
