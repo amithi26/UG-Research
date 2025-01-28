@@ -1,28 +1,43 @@
-# UG Research
+# Undergrad Research
+## Authors: Katrina Bawar, Amithi Pathak
 
-Exploration of skeletal character animation and Dafny code verification.
+This repository contains our undergrad research work involving Dafny verification and skeletal animation linear blend skinning with `three.js`. The code is written using Dafny and JavaScript.
 
-## Description
+## Project Structure
 
-Use of Three.js, HTML for in-depth analysis of artifacts in Linear Blend Skinning. Three.js website examples and Mixamo model templates used as basis. 
-Use of Dafny to analyze the use of formal methods of code verification.
+- **DualNum.dfy**: Implementation of dual numbers, including lemmas for dual conjugates, inverses, and square roots, along with a `Math` class for `sqrt` and `pow` functions.
+- **quicksort.dfy**: A quicksort implementation in Dafny, including helper functions such as `swap` and `partition`, and a recursive `quickSort` method.
+- **three.js Animation**: An HTML and JavaScript-based project demonstrating LBS using `three.js`.
 
-## Getting Started
+## Files
 
-### Dependencies
+### `DualNum.dfy`
+Contains the following:
 
-* Windows 11
-* Three.js
-* Vite
-* NPM Package Registry
-* Dafny
+- **Math Class**: Implements basic functions such as `sqrt` and `pow`.
+- **DualNumbers Class**: Implements dual numbers operations including:
+  - Dual conjugates.
+  - Lemmas for properties like multiplication and inverse.
+  - Functions for computing the inverse and square root of dual numbers.
 
-## Authors
+#### Action Items in `DualNum.dfy`
+- Write math functions for `sqrt` and `pow`.
+- Explore the concept of complex conjugates in the `Complex` class for Lemma 6.
+- Investigate how to write proofs for solving variables in Dafny.
 
-Amithi Pathak
+### `quicksort.dfy`
+This file contains the quicksort algorithm implemented in Dafny. It includes:
+- swap: Swaps elements in an array.
+- partition: Partitions the array and returns the pivot index.
+- quickSort: Recursively sorts the array.
+- printArr: A utility method for printing the array.
 
-## Acknowledgments
+### 'index.html' (three.js Animation)
+This file demonstrates skeletal animation blending using three.js. It is a modification to the original example found on the three.js examples page,
+using source code at https://github.com/mrdoob/three.js/blob/master/examples/webgl_animation_skinning_blending.html
+It includes:
+A 3D model loaded using the GLTFLoader. (From source code)
+Controls for crossfading between idle, walk, and run animations. (From source code)
+GUI elements for controlling the animation and the bone rotation. (Original code)
 
-Inspiration, code snippets, etc.
-* [Three.js Examples](https://threejs.org/examples/#webgl_animation_skinning_blending)
-* [Program Proofs, K. Rustan, M. Leino]
+
